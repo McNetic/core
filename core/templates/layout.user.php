@@ -125,7 +125,7 @@
 				<?php endforeach; ?>
 				<?php
 					/* show "More apps" link to app administration directly in app navigation, as last entry */
-					if(OC_User::isAdminUser(OC_User::getUser())):
+					if(OC_User::isAdminUser()):
 				?>
 					<li id="apps-management">
 						<a href="<?php print_unescaped(\OC::$server->getURLGenerator()->linkToRoute('settings.AppSettings.viewApps')); ?>" tabindex="4"

@@ -40,8 +40,8 @@ if($targetUserObject !== null && $currentUserObject !== null) {
 	$isUserAccessible = \OC::$server->getGroupManager()->getSubAdmin()->isUserAccessible($currentUserObject, $targetUserObject);
 }
 
-if(($username === '' && !OC_User::isAdminUser(OC_User::getUser()))
-	|| (!OC_User::isAdminUser(OC_User::getUser())
+if(($username === '' && !OC_User::isAdminUser())
+	|| (!OC_User::isAdminUser()
 		&& !$isUserAccessible)) {
 	$l = \OC::$server->getL10N('core');
 	OC_JSON::error(array( 'data' => array( 'message' => $l->t('Authentication error') )));

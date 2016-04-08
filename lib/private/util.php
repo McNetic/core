@@ -1010,7 +1010,7 @@ class OC_Util {
 	 */
 	public static function checkAdminUser() {
 		OC_Util::checkLoggedIn();
-		if (!OC_User::isAdminUser(OC_User::getUser())) {
+		if (!OC_User::isAdminUser()) {
 			header('Location: ' . \OCP\Util::linkToAbsolute('', 'index.php'));
 			exit();
 		}

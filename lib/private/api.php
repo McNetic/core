@@ -306,7 +306,7 @@ class OC_API {
 						return false;
 					}
 					$isSubAdmin = \OC::$server->getGroupManager()->getSubAdmin()->isSubAdmin($userObject);
-					$admin = OC_User::isAdminUser($user);
+					$admin = OC_User::isAdminUser();
 					if($isSubAdmin || $admin) {
 						return true;
 					} else {
@@ -319,7 +319,7 @@ class OC_API {
 				if(!$user) {
 					return false;
 				} else {
-					return OC_User::isAdminUser($user);
+					return OC_User::isAdminUser();
 				}
 			default:
 				// oops looks like invalid level supplied

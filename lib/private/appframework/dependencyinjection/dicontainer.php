@@ -412,8 +412,7 @@ class DIContainer extends SimpleContainer implements IAppContainer {
 	 * @return boolean
 	 */
 	function isAdminUser() {
-		$uid = $this->getUserId();
-		return \OC_User::isAdminUser($uid);
+		return \OC_User::isAdminUser();
 	}
 
 	private function getUserId() {

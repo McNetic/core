@@ -31,7 +31,7 @@ $success = true;
 $username = (string)$_POST['username'];
 $group = (string)$_POST['group'];
 
-if($username === OC_User::getUser() && $group === "admin" &&  OC_User::isAdminUser($username)) {
+if($username === OC_User::getUser() && $group === "admin" &&  OC_User::isAdminUser()) {
 	$l = \OC::$server->getL10N('core');
 	OC_JSON::error(array( 'data' => array( 'message' => $l->t('Admins can\'t remove themself from the admin group'))));
 	exit();
@@ -47,7 +47,7 @@ if($targetUserObject !== null && $currentUserObject !== null && $targetGroupObje
 	$isGroupAccessible = \OC::$server->getGroupManager()->getSubAdmin()->isSubAdminofGroup($currentUserObject, $targetGroupObject);
 }
 
-if(!OC_User::isAdminUser(OC_User::getUser())
+if(!OC_User::isAdminUser()
 	&& (!$isUserAccessible
 		|| !$isGroupAccessible)) {
 	$l = \OC::$server->getL10N('core');

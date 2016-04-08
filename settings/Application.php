@@ -199,7 +199,7 @@ class Application extends App {
 		});
 		/** FIXME: Remove once OC_User is non-static and mockable */
 		$container->registerService('IsAdmin', function(IContainer $c) {
-			return \OC_User::isAdminUser(\OC_User::getUser());
+			return \OC_User::isAdminUser();
 		});
 		/** FIXME: Remove once OC_SubAdmin is non-static and mockable */
 		$container->registerService('IsSubAdmin', function(IContainer $c) {

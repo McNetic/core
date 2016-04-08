@@ -75,7 +75,7 @@ class Controller {
 			$isUserAccessible = \OC::$server->getGroupManager()->getSubAdmin()->isUserAccessible($currentUserObject, $targetUserObject);
 		}
 
-		if (\OC_User::isAdminUser(\OC_User::getUser())) {
+		if (\OC_User::isAdminUser()) {
 			$userstatus = 'admin';
 		} elseif ($isUserAccessible) {
 			$userstatus = 'subadmin';

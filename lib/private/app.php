@@ -424,7 +424,7 @@ class OC_App {
 			}
 
 			// if the user is an admin
-			if (OC_User::isAdminUser(OC_User::getUser())) {
+			if (OC_User::isAdminUser()) {
 				// admin settings
 				$settings[] = array(
 					"id" => "admin",

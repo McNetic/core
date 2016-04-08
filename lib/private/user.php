@@ -348,11 +348,11 @@ class OC_User {
 	/**
 	 * Check if the user is an admin user
 	 *
-	 * @param string $uid uid of the admin
 	 * @return bool
 	 */
-	public static function isAdminUser($uid) {
-		if (OC_Group::inGroup($uid, 'admin') && self::$incognitoMode === false) {
+	public static function isAdminUser() {
+                $uid = self::getUser();
+		if ($uid && OC_Group::inGroup($uid, 'admin') && self::$incognitoMode === false) {
 			return true;
 		}
 		return false;

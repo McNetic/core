@@ -89,7 +89,7 @@ class OC_JSON{
 	 * @deprecated Use annotation based ACLs from the AppFramework instead
 	 */
 	public static function checkAdminUser() {
-		if( !OC_User::isAdminUser(OC_User::getUser())) {
+		if( !OC_User::isAdminUser()) {
 			$l = \OC::$server->getL10N('lib');
 			self::error(array( 'data' => array( 'message' => $l->t('Authentication error'), 'error' => 'authentication_error' )));
 			exit();

@@ -56,7 +56,7 @@ if (\OC_App::isEnabled('user_ldap')) {
 
 $config = \OC::$server->getConfig();
 
-$isAdmin = OC_User::isAdminUser(OC_User::getUser());
+$isAdmin = OC_User::isAdminUser();
 
 $groupsInfo = new \OC\Group\MetaData(
 	OC_User::getUser(),
